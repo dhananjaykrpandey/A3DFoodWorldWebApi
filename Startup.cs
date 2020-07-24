@@ -8,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using A3DFoodWorld.Models;
+using A3DFoodWorld.Web.RepositoryInterface;
+using A3DFoodWorld.Web.Repository;
 
 namespace A3DFoodWorld.Web
 {
@@ -25,6 +27,7 @@ namespace A3DFoodWorld.Web
         {
             services.AddControllers();
             services.AddSingleton<IItemRepository, ItemRepository>();
+            services.AddSingleton<IFoodItemRepository, FoodItemRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
